@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">assignment1</string>
+    <string name="button1_name">버튼1</string>
+    <string name="button2_name">버튼2</string>
+    <string name="button3_name">버튼3</string>
+    <string name="button4_name">버튼4</string>
+    <string name="title">"제목: "</string>
+    <string name="content">"내용: "</string>
+    <string name="title_text">제목: </string>
+    <string name="content_text">내용: </string>
+
+</resources>
