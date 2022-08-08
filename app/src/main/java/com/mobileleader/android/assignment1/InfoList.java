@@ -1,4 +1,5 @@
 package com.mobileleader.android.assignment1;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -26,6 +27,9 @@ public class InfoList extends RecyclerView.Adapter<InfoList.ViewHolder> {
     }
 
 
+    public void bindInfoItem(InfoItem infoItem){
+
+    }
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int pos) {
@@ -71,6 +75,7 @@ public class InfoList extends RecyclerView.Adapter<InfoList.ViewHolder> {
         ImageView image;
         TextView title;
         TextView content;
+        private InfoItem infoItem;
         private ClickCallbackListener callbackListener;
 
 
@@ -96,8 +101,8 @@ public class InfoList extends RecyclerView.Adapter<InfoList.ViewHolder> {
                         InfoItem item = mInfoList.get(pos);
 
                         int id = v.getId();
-                        callbackListener.callBack(getAdapterPosition(), item.getmResourceId());
-                        callbackListener.goDetail(getAdapterPosition(), item.getmResourceId(), item.getmTitle(), item.getmContent());
+                        callbackListener.callBack(getAdapterPosition(), item.getmResourceId(),item.getmTitle(), item.getmContent());
+                        //callbackListener.goDetail(getAdapterPosition(), item.getmResourceId(), item.getmTitle(), item.getmContent());
                         //imageView.setImageResource(R.drawable.);
 //                         includeImg.setImageResource(R.drawable.ic_launcher_foreground);
                         //String resName = v.getContext().getResources().getResourceName(item.getmResourceId());
@@ -116,6 +121,7 @@ public class InfoList extends RecyclerView.Adapter<InfoList.ViewHolder> {
 
                         //Intent intent = new Intent()
 
+
                         if(one_image_1 != null){
                             one_image_1.setImageResource(R.drawable.ic_launcher_foreground);
                         }
@@ -132,6 +138,9 @@ public class InfoList extends RecyclerView.Adapter<InfoList.ViewHolder> {
         public void onBind(InfoItem infoItem, ClickCallbackListener callbackListener) {
             image.setImageResource(infoItem.getmResourceId());
             title.setText(infoItem.getmTitle());
+            //String str = infoItem.getmContent();
+            //String str_sp = str.substring(0,22)+"...";
+            //String str_split = infoItem.getmContent().substring(0,22) + "...";
             content.setText(infoItem.getmContent());
             this.callbackListener = callbackListener;
             //empty_image.setImageResource(infoItem.getmResourceId());
@@ -142,13 +151,14 @@ public class InfoList extends RecyclerView.Adapter<InfoList.ViewHolder> {
         public void onClick(View view) {
             //one_image_1.setImageResource(R.drawable.ic_launcher_foreground);
             int id = view.getId();
-            callbackListener.callBack(getAdapterPosition(), item.getmResourceId());
+            callbackListener.callBack(getAdapterPosition(), item.getmResourceId(), item.getmTitle(), item.getmContent());
         }
 
         public void onBind(InfoItem infoItem) {
             image.setImageResource(infoItem.getmResourceId());
             title.setText(infoItem.getmTitle());
-            content.setText(infoItem.getmContent());
+            String str_split = infoItem.getmContent().substring(0,22) + "...";
+            content.setText(str_split);
 
         }
     }

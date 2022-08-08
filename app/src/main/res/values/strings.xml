@@ -8,5 +8,6 @@
     <string name="content">"내용: "</string>
     <string name="title_text">제목: </string>
     <string name="content_text">내용: </string>
+    <string name="exitApp">앱종료</string>
 
 </resources>
