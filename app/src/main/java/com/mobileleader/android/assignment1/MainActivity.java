@@ -1,24 +1,16 @@
 package com.mobileleader.android.assignment1;
 
-import androidx.activity.result.ActivityResult;
-import androidx.activity.result.ActivityResultCallback;
-import androidx.activity.result.ActivityResultLauncher;
-import androidx.activity.result.contract.ActivityResultContracts;
+import android.content.Intent;
+import android.os.Bundle;
+import android.view.MenuItem;
+import android.view.View;
+import android.widget.ImageView;
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-
-import android.app.Activity;
-import android.content.Intent;
-import android.media.Image;
-import android.os.Bundle;
-import android.util.Log;
-import android.view.MenuItem;
-import android.view.View;
-import android.widget.ImageView;
-import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -55,14 +47,6 @@ public class MainActivity extends AppCompatActivity {
                     startActivity(intent);
 
 
-                    // Intent intent = new Intent(callbackListner.;itemView.getContext(), DetailActivity.class);
-                    // itemView.getContext().
-
-                    //Intent intent = new Intent(MainActivity.this, DetailActivity.class);
-                    //Intent.putExtra("")
-
-                    //startActivity(intent);
-                    //launcher.launch(intent);
 
                 }
             });
@@ -117,54 +101,37 @@ public class MainActivity extends AppCompatActivity {
             //int imgName =0;
 
         String str = "이것은 초심자를 위한 안드로이드 개발 가이드 책이다. 공부 열심히 하시고 쩌는 개발자가 되십시오.";
-        String str_split = str.substring(0,22) + "...";
+
+        String title = "안드로이드 개발책 #"+ i;
+        //String subject = "dice"+i;
 
             switch (i){
                 case 1:
-                    minfoItems.add(new InfoItem(R.drawable.dice1,"안드로이드 개발책 #"+i,str));
+                    minfoItems.add(new InfoItem(R.drawable.dice1,title,str));
                     break;
                 case 2:
-                    minfoItems.add(new InfoItem(R.drawable.dice2,"안드로이드 개발책 #"+i, str));
+                    minfoItems.add(new InfoItem(R.drawable.dice2,title, str));
                     break;
                 case 3:
-                    minfoItems.add(new InfoItem(R.drawable.dice3,"안드로이드 개발책 #"+i, str));
+                    minfoItems.add(new InfoItem(R.drawable.dice3,title, str));
                     break;
                 case 4:
-                    minfoItems.add(new InfoItem(R.drawable.dice4,"안드로이드 개발책 #"+i, str));
+                    minfoItems.add(new InfoItem(R.drawable.dice4,title, str));
                     break;
                 case 5:
-                    minfoItems.add(new InfoItem(R.drawable.dice5,"안드로이드 개발책 #"+i, str));
+                    minfoItems.add(new InfoItem(R.drawable.dice5,title, str));
                     break;
                 default:
                     break;
             }
 
-            //minfoItems.add(new InfoItem(R.drawable.ic_launcher_foreground,"안드로이드 개발책 #"+i, "이것은 초심자를 위한 안드로이드 개발 가이드 책이다. 공부 열심히 하시고"));
         }
 
         mRecyclerAdapter.setmInfoList(minfoItems);
         mRecyclerAdapter.setCallbackListener(callbackListner);
 
-        findViewById(R.id.button4).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
 
-
-                //Intent intent = new Intent(, DetailActivity.class);
-
-
-               // Intent intent = new Intent(callbackListner.;itemView.getContext(), DetailActivity.class);
-               // itemView.getContext().
-
-                //Intent intent = new Intent(MainActivity.this, DetailActivity.class);
-                //Intent.putExtra("")
-
-                //startActivity(intent);
-                //launcher.launch(intent);
-
-            }
-        });
-
+/*
 
         ActivityResultLauncher<Intent> launcher = registerForActivityResult(new ActivityResultContracts.StartActivityForResult(),
                 new ActivityResultCallback<ActivityResult>() {
@@ -175,13 +142,12 @@ public class MainActivity extends AppCompatActivity {
                             Intent intent = data.getData();
                             String result = intent.getStringExtra("result");
 
-                           // tv_result.setText(result);
                         }
                     }
                 });
 
 
-
+*/
 
     }
 }

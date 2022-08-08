@@ -42,11 +42,13 @@ public class DetailActivity extends AppCompatActivity {
         int i = intent.getExtras().getInt("i"); //image resourceid
         String title = intent.getExtras().getString("title");
         String content = intent.getExtras().getString("content");
+
         ImageView detail_image = (ImageView) findViewById(R.id.one_image_2);
-        detail_image.setImageResource(i);
         TextView detail_title = (TextView) findViewById(R.id.detail_title);
-        detail_title.setText(title);
         TextView detail_content = (TextView) findViewById(R.id.detail_content);
+
+        detail_image.setImageResource(i);
+        detail_title.setText(title);
         detail_content.setText(content);
     }
 
